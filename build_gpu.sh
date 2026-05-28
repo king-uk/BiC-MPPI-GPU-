@@ -98,20 +98,23 @@ LDFLAGS="$LDFLAGS $(python3-config --ldflags --embed 2>/dev/null || python3-conf
 mkdir -p build_gpu
 
 # ── GPU solver 오브젝트 파일 컴파일 ──────────────────────────────
-echo "[1/5] Compiling mppi_gpu.cu ..."
+echo "[1/6] Compiling mppi_gpu.cu ..."
 $NVCC $NVCCFLAGS $INCLUDES -c mppi/cuda/mppi_gpu.cu -o build_gpu/mppi_gpu.o
 
-echo "[2/5] Compiling cluster_mppi_gpu.cu ..."
+echo "[2/6] Compiling cluster_mppi_gpu.cu ..."
 $NVCC $NVCCFLAGS $INCLUDES -c mppi/cuda/cluster_mppi_gpu.cu -o build_gpu/cluster_mppi_gpu.o
 
-echo "[3/5] Compiling bi_mppi_gpu.cu ..."
+echo "[3/6] Compiling bi_mppi_gpu.cu ..."
 $NVCC $NVCCFLAGS $INCLUDES -c mppi/cuda/bi_mppi_gpu.cu -o build_gpu/bi_mppi_gpu.o
 
-echo "[4/5] Compiling svgd_mppi_gpu.cu ..."
+echo "[4/6] Compiling svgd_mppi_gpu.cu ..."
 $NVCC $NVCCFLAGS $INCLUDES -c mppi/cuda/svgd_mppi_gpu.cu -o build_gpu/svgd_mppi_gpu.o
 
+echo "[5/6] Compiling log_mppi_gpu.cu ..."
+$NVCC $NVCCFLAGS $INCLUDES -c mppi/cuda/log_mppi_gpu.cu -o build_gpu/log_mppi_gpu.o
+
 # GPU 오브젝트들을 ar로 정적 라이브러리로 묶기
-GPU_OBJS="build_gpu/mppi_gpu.o build_gpu/cluster_mppi_gpu.o build_gpu/bi_mppi_gpu.o build_gpu/svgd_mppi_gpu.o"
+GPU_OBJS="build_gpu/mppi_gpu.o build_gpu/cluster_mppi_gpu.o build_gpu/bi_mppi_gpu.o build_gpu/svgd_mppi_gpu.o build_gpu/log_mppi_gpu.o"
 ar rcs build_gpu/libmppi_gpu.a $GPU_OBJS
 echo "  → build_gpu/libmppi_gpu.a 생성 완료"
 
@@ -137,6 +140,14 @@ build_target() {
 # build_target src/wmrobot/gpu/cluster_mppi.cpp
 # build_target src/wmrobot/gpu/bi_mppi.cpp
 # build_target src/wmrobot/gpu/svgd_mppi.cpp
+# build_target src/wmrobot/gpu/log_mppi.cpp
+
+# ---- Quadrotor GPU 버전 ----
+build_target src/quadrotor/gpu/mppi.cpp
+build_target src/quadrotor/gpu/cluster_mppi.cpp
+build_target src/quadrotor/gpu/bi_mppi.cpp
+build_target src/quadrotor/gpu/svgd_mppi.cpp
+build_target src/quadrotor/gpu/log_mppi.cpp
 
 # ---- WMRobot map_78 시각화 버전 ----
 build_target_named() {
@@ -150,10 +161,10 @@ build_target_named() {
         -o "build_gpu/$NAME"
     echo "  → build_gpu/$NAME 완료"
 }
-build_target_named src/wmrobot/map_285/mppi.cpp vis_mppi
-build_target_named src/wmrobot/map_285/cluster_mppi.cpp vis_cluster_mppi
-build_target_named src/wmrobot/map_285/bi_mppi.cpp vis_bi_mppi
-build_target_named src/wmrobot/map_285/svgd_mppi.cpp vis_svgd_mppi
+# build_target_named src/wmrobot/map_285/mppi.cpp vis_mppi
+# build_target_named src/wmrobot/map_285/cluster_mppi.cpp vis_cluster_mppi
+# build_target_named src/wmrobot/map_285/bi_mppi.cpp vis_bi_mppi
+# build_target_named src/wmrobot/map_285/svgd_mppi.cpp vis_svgd_mppi
 
 echo ""
 echo "=== 빌드 완료 ==="

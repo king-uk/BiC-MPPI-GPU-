@@ -1,8 +1,0 @@
-solver=bi_mppi
-dim_x=3
-T=50
-map_resolution=0.1
-map_rows=30
-map_cols=49
-x_init=0.5 0 1.5708
-x_target=1.5 5 1.5708

@@ -12,7 +12,7 @@ cd "$SCRIPT_DIR/build_gpu" || { echo "build_gpu 폴더가 없습니다. 먼저 .
 echo "=== Running all GPU examples ==="
 
 # 실행할 GPU 예제 목록
-EXAMPLES=("mppi" "cluster_mppi" "bi_mppi" "svgd_mppi")
+EXAMPLES=("mppi" "cluster_mppi" "bi_mppi" "svgd_mppi" "log_mppi")
 
 for EX in "${EXAMPLES[@]}"; do
     if [ -x "./$EX" ]; then
