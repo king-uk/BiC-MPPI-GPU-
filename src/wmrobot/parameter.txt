@@ -1,0 +1,23 @@
+// --- test3 parameter ---
+  param.Nf = 700;
+  param.Nb = 700;
+  param.Ns = 10; // surrogate samples per SVGD step
+  param.istep = 5;
+
+  // --- test2 parameter ---
+  // param.Nf = 900;
+  // param.Nb = 900;
+  // param.Ns = 10; // surrogate samples per SVGD step
+  // param.istep = 5;
+
+  // --- test1 parameter ---
+  // param.Nf = 300;
+  // param.Nb = 300;
+  // param.Ns = 30;   // surrogate samples per SVGD step
+  // param.istep = 5; // SVGD inner iterations
+
+  // --- original parameter ---
+  // param.Nf = 120;
+  // param.Nb = 120;
+  // param.Ns = 10;   // surrogate samples per SVGD step
+  // param.istep = 5; // SVGD inner iterations

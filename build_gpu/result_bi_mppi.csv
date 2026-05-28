@@ -1,0 +1,2 @@
+s,map,is_success,iter,elapsed,elapsed_rollout,elapsed_clustering,elapsed_connection,elapsed_guide,f_err
+0,285,1,95,9.61665,0.225834,8.42046,0.0287917,0.94156,0.0871781

@@ -1,0 +1,1903 @@
+=== GPU Build Configuration ===
+  nvcc        : /usr/bin/nvcc
+  CUDA include: /usr/include
+  cudart      : /usr/lib/x86_64-linux-gnu/libcudart.so
+  curand      : /usr/lib/x86_64-linux-gnu/libcurand.so
+================================
+[1/5] Compiling mppi_gpu.cu ...
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+[2/5] Compiling cluster_mppi_gpu.cu ...
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+[3/5] Compiling bi_mppi_gpu.cu ...
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+[4/5] Compiling svgd_mppi_gpu.cu ...
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(77): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(79): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(81): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(83): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(85): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(86): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(87): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(88): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(89): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(90): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(91): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(92): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(93): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(94): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h(95): warning #20236-D: pragma "diag_suppress" is deprecated, use "nv_diag_suppress" instead
+
+mppi/cuda/svgd_mppi_gpu.cu(527): error: identifier "model_f" is undefined
+
+1 error detected in the compilation of "mppi/cuda/svgd_mppi_gpu.cu".
