@@ -88,6 +88,13 @@ protected:
 
   int alloc_Nf, alloc_Nb, alloc_Tf, alloc_Tb; // last allocated sizes
 
+  // ---- Model-independent callbacks & type ----
+  int model_type;
+  std::function<Eigen::MatrixXd(Eigen::VectorXd, Eigen::VectorXd)> f;
+  std::function<double(Eigen::VectorXd, Eigen::VectorXd)> q;
+  std::function<double(Eigen::VectorXd, Eigen::VectorXd)> p;
+  std::function<void(Eigen::Ref<Eigen::MatrixXd>)> h;
+
   void allocForward();
   void allocBackward();
   void allocGuide();
@@ -116,6 +123,21 @@ protected:
 template <typename ModelClass> BiMPPI_GPU::BiMPPI_GPU(ModelClass model) {
   dim_x = model.dim_x;
   dim_u = model.dim_u;
+  this->f = model.f;
+  this->q = model.q;
+  this->p = model.p;
+  this->h = model.h;
+
+  if (dim_x == 6 && dim_u == 3) {
+    model_type = 1; // Quadrotor
+  } else if (dim_x == 4 && dim_u == 2) {
+    model_type = 2; // Velo
+  } else if (dim_x == 6 && dim_u == 6) {
+    model_type = 3; // Manipulator (6-DOF velocity control)
+  } else {
+    model_type = 0; // WMRobot
+  }
+
   d_Uf0 = d_Ufi = d_noise_f = d_costs_f = d_Uf_out = d_Di_f = nullptr;
   d_Ub0 = d_Ubi = d_noise_b = d_costs_b = d_Ub_out = d_Di_b = nullptr;
   d_Ur0 = d_Uri = d_noise_r = d_costs_r = d_Ur_out = d_Xref = nullptr;

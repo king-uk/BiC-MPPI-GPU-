@@ -19,7 +19,7 @@ int main() {
   param.x_init << 2.5, 0.0, M_PI_2;
   param.x_target.resize(model.dim_x);
   param.x_target << 1.5, 5.0, M_PI_2;
-  param.N = 6000;
+  param.N = 10000;
   param.gamma_u = 10.0;
   Eigen::VectorXd sigma_u(model.dim_u);
   sigma_u << 0.6, 0.6;

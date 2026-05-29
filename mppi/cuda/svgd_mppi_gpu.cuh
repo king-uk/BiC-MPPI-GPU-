@@ -1,10 +1,10 @@
 #pragma once
 
-#include "cuda_utils.cuh"
-#include "mppi_vis_logger.h"
 #include "collision_checker.h"
+#include "cuda_utils.cuh"
 #include "model_base.h"
 #include "mppi_param.h"
+#include "mppi_vis_logger.h"
 
 #include <Eigen/Dense>
 #include <chrono>
@@ -35,8 +35,8 @@ public:
   void setVisLogger(MPPIVisLogger *logger) { vis_logger = logger; }
 
   // ── 공개 상태 (CPU BiMPPI와 동일 인터페이스) ──
-  Eigen::MatrixXd U_f0;  // dim_u x Tf
-  Eigen::MatrixXd U_b0;  // dim_u x Tb
+  Eigen::MatrixXd U_f0; // dim_u x Tf
+  Eigen::MatrixXd U_b0; // dim_u x Tb
   Eigen::VectorXd x_init;
   Eigen::VectorXd x_target;
   Eigen::VectorXd dummy_u;
@@ -47,8 +47,8 @@ public:
   // Timing
   std::chrono::time_point<std::chrono::high_resolution_clock> start, finish;
   std::chrono::duration<double> elapsed_1, elapsed_2, elapsed_3, elapsed_4;
-  double elapsed, elapsed_rollout, elapsed_clustering,
-         elapsed_connection, elapsed_guide;
+  double elapsed, elapsed_rollout, elapsed_clustering, elapsed_connection,
+      elapsed_guide;
   std::vector<Eigen::VectorXd> visual_traj;
 
 protected:
@@ -95,6 +95,13 @@ protected:
   curandGenerator_t curand_gen;
   int alloc_Nf, alloc_Nb, alloc_Tf, alloc_Tb;
 
+  // ---- Model-independent callbacks & type ----
+  int model_type;
+  std::function<Eigen::MatrixXd(Eigen::VectorXd, Eigen::VectorXd)> f;
+  std::function<double(Eigen::VectorXd, Eigen::VectorXd)> q;
+  std::function<double(Eigen::VectorXd, Eigen::VectorXd)> p;
+  std::function<void(Eigen::Ref<Eigen::MatrixXd>)> h;
+
   // GPU 메모리 관리
   void allocForward();
   void allocBackward();
@@ -119,16 +126,29 @@ protected:
               int N_samples);
   void calculateU(Eigen::MatrixXd &Uout,
                   const std::vector<std::vector<int>> &clusters,
-                  const Eigen::VectorXd &costs,
-                  const Eigen::MatrixXd &Ui_cpu,
+                  const Eigen::VectorXd &costs, const Eigen::MatrixXd &Ui_cpu,
                   int T_steps);
 };
 
 // ── 템플릿 생성자 ─────────────────────────────────────────────
-template <typename ModelClass>
-SVGDMPPI_GPU::SVGDMPPI_GPU(ModelClass model) {
+template <typename ModelClass> SVGDMPPI_GPU::SVGDMPPI_GPU(ModelClass model) {
   dim_x = model.dim_x;
   dim_u = model.dim_u;
+  this->f = model.f;
+  this->q = model.q;
+  this->p = model.p;
+  this->h = model.h;
+
+  if (dim_x == 6 && dim_u == 3) {
+    model_type = 1; // Quadrotor
+  } else if (dim_x == 4 && dim_u == 2) {
+    model_type = 2; // Velo
+  } else if (dim_x == 6 && dim_u == 6) {
+    model_type = 3; // Manipulator (6-DOF velocity control)
+  } else {
+    model_type = 0; // WMRobot
+  }
+
   d_Uf0 = d_Ufi = d_noise_f = d_costs_f = d_Di_f = nullptr;
   d_Ub0 = d_Ubi = d_noise_b = d_costs_b = d_Di_b = nullptr;
   d_x_init = d_x_target = d_sigma = nullptr;

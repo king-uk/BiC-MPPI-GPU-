@@ -11,20 +11,15 @@ static void cluster_vis_reconstruct_forward(
     const std::vector<int> &indices,
     std::vector<Eigen::MatrixXd> &out,
     std::vector<double> &out_costs,
-    const Eigen::VectorXd &all_costs) {
+    const Eigen::VectorXd &all_costs,
+    const std::function<Eigen::MatrixXd(Eigen::VectorXd, Eigen::VectorXd)> &f_func) {
   out.clear();
   out_costs.clear();
   for (int idx : indices) {
     Eigen::MatrixXd Xi(dim_x, T + 1);
     Xi.col(0) = x0;
     for (int t = 0; t < T; ++t) {
-      double v = Ui_cpu(idx * dim_u, t);
-      double om = Ui_cpu(idx * dim_u + 1, t);
-      Eigen::VectorXd xd(dim_x);
-      xd(0) = v * cos(Xi(2, t));
-      xd(1) = v * sin(Xi(2, t));
-      xd(2) = om;
-      Xi.col(t + 1) = Xi.col(t) + dt * xd;
+      Xi.col(t + 1) = Xi.col(t) + dt * f_func(Xi.col(t), Ui_cpu.middleRows(idx * dim_u, dim_u).col(t));
     }
     out.push_back(Xi);
     out_costs.push_back(all_costs(idx));
@@ -123,12 +118,8 @@ void ClusterMPPI_GPU::calculateU(Eigen::MatrixXd &Uout,
           (wts[i] / tw) * Ui_cpu.middleRows(k * dim_u, dim_u);
     }
     // Clamp
-    Uout.block(idx * dim_u, 0, 1, T_steps) =
-        Uout.block(idx * dim_u, 0, 1, T_steps).cwiseMax(0.0).cwiseMin(1.0);
-    Uout.block(idx * dim_u + 1, 0, 1, T_steps) =
-        Uout.block(idx * dim_u + 1, 0, 1, T_steps)
-            .cwiseMax(-M_PI / 2.0)
-            .cwiseMin(M_PI / 2.0);
+    Eigen::Ref<Eigen::MatrixXd> slice = Uout.middleRows(idx * dim_u, dim_u);
+    h(slice);
   }
 }
 
@@ -152,7 +143,7 @@ void ClusterMPPI_GPU::solve() {
       d_costs, d_Di,
       with_map, d_map, map_max_row, map_max_col, map_resolution,
       d_circles, n_circles, d_rects, n_rects,
-      N, dim_u, dim_x, T, (double)dt, gamma_u);
+      N, dim_u, dim_x, T, (double)dt, gamma_u, model_type);
   CUDA_CHECK(cudaGetLastError());
   CUDA_CHECK(cudaDeviceSynchronize());
 
@@ -199,15 +190,10 @@ void ClusterMPPI_GPU::solve() {
     Xi.col(0) = x_init;
     double cost = 0.0;
     for (int j = 0; j < T; ++j) {
-      Eigen::VectorXd xd(dim_x);
-      double v = U(ci * dim_u, j), omega = U(ci * dim_u + 1, j);
-      xd(0) = v * cos(Xi(2, j));
-      xd(1) = v * sin(Xi(2, j));
-      xd(2) = omega;
-      Xi.col(j + 1) = Xi.col(j) + (double)dt * xd;
-      cost += (Xi.col(j) - x_target).norm();
+      cost += p(Xi.col(j), x_target);
+      Xi.col(j + 1) = Xi.col(j) + (double)dt * f(Xi.col(j), U.block(ci * dim_u, j, dim_u, 1));
     }
-    cost += (Xi.col(T) - x_target).norm();
+    cost += p(Xi.col(T), x_target);
     if (collision_checker->getCollisionGrid(Xi.col(T))) cost = 1e8;
     if (cost < min_cost) { min_cost = cost; min_idx = ci; }
   }
@@ -226,12 +212,7 @@ void ClusterMPPI_GPU::solve() {
 
   Xo.col(0) = x_init;
   for (int j = 0; j < T; ++j) {
-    Eigen::VectorXd xd(dim_x);
-    double v = Uo(0, j), omega = Uo(1, j);
-    xd(0) = v * cos(Xo(2, j));
-    xd(1) = v * sin(Xo(2, j));
-    xd(2) = omega;
-    Xo.col(j + 1) = Xo.col(j) + (double)dt * xd;
+    Xo.col(j + 1) = Xo.col(j) + (double)dt * f(Xo.col(j), Uo.col(j));
   }
 
   // ── Visualization data export ──
@@ -241,7 +222,7 @@ void ClusterMPPI_GPU::solve() {
     std::vector<Eigen::MatrixXd> sample_trajs;
     std::vector<double> sample_costs;
     cluster_vis_reconstruct_forward(Ui_cpu, x_init, N, dim_u, dim_x, T, dt,
-                                    sel, sample_trajs, sample_costs, costs_cpu);
+                                    sel, sample_trajs, sample_costs, costs_cpu, f);
     vis_logger->saveTrajectories("rollouts", sample_trajs);
     vis_logger->saveCosts("rollouts", sample_costs);
     // Cluster representative trajectories
@@ -250,12 +231,7 @@ void ClusterMPPI_GPU::solve() {
       Eigen::MatrixXd Xi(dim_x, T + 1);
       Xi.col(0) = x_init;
       for (int j = 0; j < T; ++j) {
-        Eigen::VectorXd xd(dim_x);
-        double v2 = U(ci * dim_u, j), om2 = U(ci * dim_u + 1, j);
-        xd(0) = v2 * cos(Xi(2, j));
-        xd(1) = v2 * sin(Xi(2, j));
-        xd(2) = om2;
-        Xi.col(j + 1) = Xi.col(j) + (double)dt * xd;
+        Xi.col(j + 1) = Xi.col(j) + (double)dt * f(Xi.col(j), U.block(ci * dim_u, j, dim_u, 1));
       }
       cluster_trajs.push_back(Xi);
     }

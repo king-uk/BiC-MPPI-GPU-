@@ -1,5 +1,5 @@
-#include <svgd_mppi_gpu.cuh>
-#include <wmrobot_map.h>
+#include <cluster_mppi_gpu.cuh>
+#include <velo.h>
 
 #include <Eigen/Dense>
 #include <chrono>
@@ -7,39 +7,27 @@
 #include <iostream>
 
 int main() {
-  auto model = WMRobotMap();
+  auto model = Velo();
 
-  using Solver = SVGDMPPI_GPU;
-  using SolverParam = SVGDMPPIParam;
+  using Solver = ClusterMPPI_GPU;
+  using SolverParam = MPPIParam;
 
   SolverParam param;
   param.dt = 0.1;
-  param.Tf = 50;
-  param.Tb = 50;
+  param.T = 100;
   param.x_init.resize(model.dim_x);
-  param.x_init << 2.5, 0.0, M_PI_2;
+  param.x_init << 2.5, 0.0, 0.0, 0.0;
   param.x_target.resize(model.dim_x);
-  param.x_target << 1.5, 5.0, M_PI_2;
-
-  param.Nf = 200;
-  param.Nb = 200;
-  param.Ns = 10;
-  param.istep = 5;
-
-  param.Nr = 5000;
+  param.x_target << 1.5, 5.0, 0.0, 0.0;
+  param.N = 6000;
   param.gamma_u = 10.0;
   Eigen::VectorXd sigma_u(model.dim_u);
-  sigma_u << 0.6, 0.6;
+  sigma_u << 0.5, 0.5;
   param.sigma_u = sigma_u.asDiagonal();
-  param.deviation_mu = 1.0;
-  param.cost_mu = 1.0;
-  param.minpts = 5;
-  param.epsilon = 0.01;
-  param.psi = 0.6;
 
   int maxiter = 200;
 
-  std::ofstream csv("result_svgd_mppi.csv");
+  std::ofstream csv("result_velo_cluster_mppi.csv");
   csv << "s,map,is_success,iter,elapsed,elapsed_rollout,elapsed_clustering,"
          "elapsed_connection,elapsed_guide,f_err\n";
 
@@ -54,16 +42,13 @@ int main() {
     default:
       break;
     }
-
     for (int map = 299; map >= 0; --map) {
       CollisionChecker collision_checker = CollisionChecker();
       collision_checker.loadMap("../BARN_dataset/txt_files/output_" +
                                     std::to_string(map) + ".txt",
                                 0.1);
-
       Solver solver(model);
-      solver.U_f0 = Eigen::MatrixXd::Zero(model.dim_u, param.Tf);
-      solver.U_b0 = Eigen::MatrixXd::Zero(model.dim_u, param.Tb);
+      solver.U_0 = Eigen::MatrixXd::Zero(model.dim_u, param.T);
       solver.init(param);
       solver.setCollisionChecker(&collision_checker);
 
@@ -76,10 +61,10 @@ int main() {
       double total_connection = 0.0;
       double total_guide = 0.0;
       double f_err = 0.0;
-
       for (i = 0; i < maxiter; ++i) {
         solver.solve();
         solver.move();
+
         total_elapsed += solver.elapsed;
         total_rollout += solver.elapsed_rollout;
         total_clustering += solver.elapsed_clustering;
@@ -90,14 +75,14 @@ int main() {
           is_collision = true;
           break;
         } else {
-          f_err = (solver.x_init - param.x_target).norm();
+          f_err = (solver.x_init.head(2) - param.x_target.head(2)).norm();
           if (f_err < 0.1) {
             is_success = true;
             break;
           }
         }
       }
-      std::cout << s << '\t' << map << '\t' << is_success << '\t' << i << '\t'
+      std::cout << "Velo Cluster MPPI: s=" << s << "\tmap=" << map << "\t" << is_success << "\t" << i << "\t"
                 << total_elapsed << std::endl;
       csv << s << ',' << map << ',' << is_success << ',' << i << ','
           << total_elapsed << ',' << total_rollout << ',' << total_clustering

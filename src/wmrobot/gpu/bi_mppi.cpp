@@ -23,9 +23,9 @@ int main() {
   param.x_target.resize(model.dim_x);
   param.x_target << 1.5, 5.0, M_PI_2;
 
-  param.Nf = 6000;
-  param.Nb = 6000;
-  param.Nr = 3000;
+  param.Nf = 10000;
+  param.Nb = 10000;
+  param.Nr = 5000;
   param.gamma_u = 10.0;
   Eigen::VectorXd sigma_u(model.dim_u);
   sigma_u << 0.6, 0.6;

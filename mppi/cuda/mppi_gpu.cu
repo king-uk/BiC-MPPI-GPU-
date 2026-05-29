@@ -13,20 +13,19 @@ static void vis_reconstruct_forward(
     const std::vector<int> &indices,
     std::vector<Eigen::MatrixXd> &out,
     std::vector<double> &out_costs,
-    const std::vector<double> &all_costs) {
+    const std::vector<double> &all_costs,
+    const std::function<Eigen::MatrixXd(Eigen::VectorXd, Eigen::VectorXd)> &f_func) {
   out.clear();
   out_costs.clear();
   for (int idx : indices) {
     Eigen::MatrixXd Xi(dim_x, T + 1);
     Xi.col(0) = x0;
     for (int t = 0; t < T; ++t) {
-      double v = Ui_flat[idx * (dim_u * T) + 0 * T + t];
-      double om = Ui_flat[idx * (dim_u * T) + 1 * T + t];
-      Eigen::VectorXd xd(dim_x);
-      xd(0) = v * cos(Xi(2, t));
-      xd(1) = v * sin(Xi(2, t));
-      xd(2) = om;
-      Xi.col(t + 1) = Xi.col(t) + dt * xd;
+      Eigen::VectorXd u(dim_u);
+      for (int d = 0; d < dim_u; ++d) {
+        u(d) = Ui_flat[idx * (dim_u * T) + d * T + t];
+      }
+      Xi.col(t + 1) = Xi.col(t) + dt * f_func(Xi.col(t), u);
     }
     out.push_back(Xi);
     out_costs.push_back(all_costs[idx]);
@@ -197,7 +196,7 @@ void MPPI_GPU::solve() {
       d_costs, d_Di,
       with_map, d_map, map_max_row, map_max_col, map_resolution,
       d_circles, n_circles, d_rects, n_rects,
-      N, dim_u, dim_x, T, (double)dt, gamma_u);
+      N, dim_u, dim_x, T, (double)dt, gamma_u, model_type);
   CUDA_CHECK(cudaGetLastError());
 
   // Copy costs to CPU for min
@@ -225,8 +224,7 @@ void MPPI_GPU::solve() {
     for (int t = 0; t < T; ++t)
       Uo(d, t) = h_Uo[d * T + t];
   // h() clamping
-  Uo.row(0) = Uo.row(0).cwiseMax(0.0).cwiseMin(1.0);
-  Uo.row(1) = Uo.row(1).cwiseMax(-M_PI / 2.0).cwiseMin(M_PI / 2.0);
+  h(Uo);
 
   CUDA_CHECK(cudaDeviceSynchronize());
   finish = std::chrono::high_resolution_clock::now();
@@ -242,12 +240,7 @@ void MPPI_GPU::solve() {
   // Reconstruct optimal trajectory on CPU (dim_x small)
   Xo.col(0) = x_init;
   for (int j = 0; j < T; ++j) {
-    Eigen::VectorXd xd(dim_x);
-    double v = Uo(0, j), omega = Uo(1, j);
-    xd(0) = v * cos(Xo(2, j));
-    xd(1) = v * sin(Xo(2, j));
-    xd(2) = omega;
-    Xo.col(j + 1) = Xo.col(j) + (double)dt * xd;
+    Xo.col(j + 1) = Xo.col(j) + (double)dt * f(Xo.col(j), Uo.col(j));
   }
 
   // ── Visualization data export ──
@@ -261,7 +254,7 @@ void MPPI_GPU::solve() {
     std::vector<Eigen::MatrixXd> sample_trajs;
     std::vector<double> sample_costs;
     vis_reconstruct_forward(h_Ui, x_init, N, dim_u, dim_x, T, dt,
-                            sel, sample_trajs, sample_costs, h_costs);
+                            sel, sample_trajs, sample_costs, h_costs, f);
     vis_logger->saveTrajectories("rollouts", sample_trajs);
     vis_logger->saveCosts("rollouts", sample_costs);
     vis_logger->saveTrajectory("optimal", Xo);
@@ -273,12 +266,7 @@ void MPPI_GPU::solve() {
 
 void MPPI_GPU::move() {
   // Euler step: x_init += dt * f(x_init, u0)
-  Eigen::VectorXd xd(dim_x);
-  double v = u0(0), omega = u0(1);
-  xd(0) = v * cos(x_init(2));
-  xd(1) = v * sin(x_init(2));
-  xd(2) = omega;
-  x_init = x_init + (double)dt * xd;
+  x_init = x_init + (double)dt * f(x_init, u0);
 
   U_0.leftCols(T - 1) = Uo.rightCols(T - 1);
 }

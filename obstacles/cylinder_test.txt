@@ -1,0 +1,11 @@
+# Cylinder obstacle file for RB5 manipulator avoidance test
+# Format: cx cy r z_min z_max
+# Units: meters (world frame, origin = robot base)
+#
+# Scenario: Robot must rotate J1 from 0 to pi/2 (90 deg)
+#   The EE sweeps an arc in the XY plane at roughly z~0.4m
+#   This cylinder is placed in the arc path, forcing the robot
+#   to route around it (e.g. lift over or detour in joint space)
+#
+# Cylinder 1: directly in the swing path of link2+EE arc
+0.25 0.15 0.08 0.0 0.6

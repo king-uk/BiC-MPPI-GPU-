@@ -79,6 +79,13 @@ protected:
 
   curandGenerator_t curand_gen;
 
+  // ---- Model-independent callbacks & type ----
+  int model_type;
+  std::function<Eigen::MatrixXd(Eigen::VectorXd, Eigen::VectorXd)> f;
+  std::function<double(Eigen::VectorXd, Eigen::VectorXd)> q;
+  std::function<double(Eigen::VectorXd, Eigen::VectorXd)> p;
+  std::function<void(Eigen::Ref<Eigen::MatrixXd>)> h;
+
   // ---- Helper methods ----
   void allocGPU();
   void freeGPU();
@@ -95,6 +102,21 @@ template <typename ModelClass>
 MPPI_GPU::MPPI_GPU(ModelClass model) {
   dim_x = model.dim_x;
   dim_u = model.dim_u;
+  this->f = model.f;
+  this->q = model.q;
+  this->p = model.p;
+  this->h = model.h;
+
+  if (dim_x == 6 && dim_u == 3) {
+    model_type = 1; // Quadrotor
+  } else if (dim_x == 4 && dim_u == 2) {
+    model_type = 2; // Velo (2D double integrator)
+  } else if (dim_x == 6 && dim_u == 6) {
+    model_type = 3; // Manipulator (6-DOF velocity control)
+  } else {
+    model_type = 0; // WMRobot
+  }
+
   // GPU buffers initialised in allocGPU() after init()
   d_U0 = d_Ui = d_noise = d_costs = d_Uo = d_Di = nullptr;
   d_x_init = d_x_target = d_sigma = nullptr;

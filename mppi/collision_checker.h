@@ -20,9 +20,12 @@ public:
   std::vector<std::array<double, 4>> circles;
   // x1, x2, y1, y2
   std::vector<std::array<double, 4>> rectangles;
+  // cx, cy, r, r^2, z_min, z_max  (3D vertical cylinder)
+  std::vector<std::array<double, 6>> cylinders_3d;
 
   void addCircle(double x, double y, double r);
   void addRectangle(double x, double y, double w, double h);
+  void addCylinder(double cx, double cy, double r, double z_min, double z_max);
 
   bool getCollisionGrid(const Eigen::VectorXd &x);
   bool getCollisionCircle(const Eigen::VectorXd &z);
@@ -30,6 +33,8 @@ public:
   bool getCollisionCircle_polygon(const Eigen::VectorXd &z);
   bool getCollisionGrid_map(const Eigen::VectorXd &x);
   bool getCollisionCircle_map(const Eigen::VectorXd &z);
+  // 3D cylinder: point p=[px,py,pz] 가 임의의 기둥 내부인지 판정
+  bool getCollisionCylinder3D(double px, double py, double pz) const;
 
   std::vector<std::vector<double>> map;
 
@@ -94,6 +99,23 @@ inline void CollisionChecker::addCircle(double x, double y, double r) {
 
 inline void CollisionChecker::addRectangle(double x, double y, double w, double h) {
   rectangles.push_back({x, x + w, y, y + h});
+}
+
+inline void CollisionChecker::addCylinder(double cx, double cy, double r,
+                                          double z_min, double z_max) {
+  cylinders_3d.push_back({cx, cy, r, r * r, z_min, z_max});
+}
+
+inline bool CollisionChecker::getCollisionCylinder3D(double px, double py,
+                                                     double pz) const {
+  for (const auto &cyl : cylinders_3d) {
+    double dx = px - cyl[0];
+    double dy = py - cyl[1];
+    double dist2 = dx * dx + dy * dy;
+    if (dist2 <= cyl[3] && pz >= cyl[4] && pz <= cyl[5])
+      return true;
+  }
+  return false;
 }
 
 inline bool CollisionChecker::getCollisionGrid(const Eigen::VectorXd &x) {

@@ -23,9 +23,9 @@ int main() {
   param.x_target.resize(model.dim_x);
   param.x_target << 1.5, 5.0, 0.0, 0.0, 0.0, 0.0;
 
-  param.Nf = 6000;
-  param.Nb = 6000;
-  param.Nr = 3000;
+  param.Nf = 10000;
+  param.Nb = 10000;
+  param.Nr = 5000;
   param.gamma_u = 10.0;
   Eigen::VectorXd sigma_u(model.dim_u);
   sigma_u << 1.5, 1.5, 1.5;
@@ -60,7 +60,7 @@ int main() {
     solver.dummy_u(2) += model.g;
 
     bool is_landed = false;
-    bool is_failed = false;
+    bool is_failed = true;
     int i = 0;
     double total_elapsed = 0.0;
     double total_rollout = 0.0;
@@ -84,7 +84,9 @@ int main() {
         f_err = (solver.x_init.head(2) - param.x_target.head(2)).norm();
         if (solver.x_init(2) < 0) {
           is_landed = true;
-          is_failed = false;
+          if (f_err < 0.3) {
+            is_failed = false;
+          }
           break;
         }
       }

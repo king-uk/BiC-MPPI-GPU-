@@ -21,12 +21,12 @@ int main() {
   param.x_target.resize(model.dim_x);
   param.x_target << 1.5, 5.0, 0.0, 0.0, 0.0, 0.0;
 
-  param.Nf = 120;
-  param.Nb = 120;
+  param.Nf = 200;
+  param.Nb = 200;
   param.Ns = 10;
   param.istep = 5;
 
-  param.Nr = 3000;
+  param.Nr = 5000;
   param.gamma_u = 10.0;
   Eigen::VectorXd sigma_u(model.dim_u);
   sigma_u << 1.5, 1.5, 1.5;
@@ -84,7 +84,9 @@ int main() {
         f_err = (solver.x_init.head(2) - param.x_target.head(2)).norm();
         if (solver.x_init(2) < 0) {
           is_landed = true;
-          is_failed = false;
+          if (f_err < 0.3) {
+            is_failed = false;
+          }
           break;
         }
       }

@@ -4,3 +4,8 @@ eigen/
 matplotlibcpp/
 EigenRand/
 BARN_dataset/txt_files
+build_gpu/
+build_cpu/
+build_gpu_bin/
+build_run/
+build_cmake/

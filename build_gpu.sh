@@ -136,18 +136,32 @@ build_target() {
 # ===========================================================================
 
 # ---- WMRobot GPU 버전 ----
-# build_target src/wmrobot/gpu/mppi.cpp
-# build_target src/wmrobot/gpu/cluster_mppi.cpp
-# build_target src/wmrobot/gpu/bi_mppi.cpp
-# build_target src/wmrobot/gpu/svgd_mppi.cpp
+build_target src/wmrobot/gpu/mppi.cpp
+build_target src/wmrobot/gpu/cluster_mppi.cpp
+build_target src/wmrobot/gpu/bi_mppi.cpp
+build_target src/wmrobot/gpu/svgd_mppi.cpp
 # build_target src/wmrobot/gpu/log_mppi.cpp
 
 # ---- Quadrotor GPU 버전 ----
-build_target src/quadrotor/gpu/mppi.cpp
-build_target src/quadrotor/gpu/cluster_mppi.cpp
-build_target src/quadrotor/gpu/bi_mppi.cpp
-build_target src/quadrotor/gpu/svgd_mppi.cpp
-build_target src/quadrotor/gpu/log_mppi.cpp
+# build_target src/quadrotor/gpu/mppi.cpp
+# build_target src/quadrotor/gpu/cluster_mppi.cpp
+# build_target src/quadrotor/gpu/bi_mppi.cpp
+# build_target src/quadrotor/gpu/svgd_mppi.cpp
+# build_target src/quadrotor/gpu/log_mppi.cpp
+
+# ---- Manipulator GPU 버전 ----
+# build_target src/manipulator/gpu/mppi.cpp
+# build_target src/manipulator/gpu/cluster_mppi.cpp
+# build_target src/manipulator/gpu/bi_mppi.cpp
+# build_target src/manipulator/gpu/svgd_mppi.cpp
+# build_target src/manipulator/gpu/mppi_cylinder.cpp
+
+# ---- Velo GPU 버전 ----
+# build_target src/velo/gpu/mppi.cpp
+# build_target src/velo/gpu/cluster_mppi.cpp
+# build_target src/velo/gpu/bi_mppi.cpp
+# build_target src/velo/gpu/svgd_mppi.cpp
+# build_target src/velo/gpu/log_mppi.cpp
 
 # ---- WMRobot map_78 시각화 버전 ----
 build_target_named() {

@@ -1,5 +1,5 @@
-#include <quadrotor.h>
 #include <log_mppi_gpu.cuh>
+#include <quadrotor.h>
 
 #include <Eigen/Dense>
 #include <chrono>
@@ -19,7 +19,7 @@ int main() {
   param.x_init << 1.5, 0.0, 5.0, 0.0, 0.0, 0.0;
   param.x_target.resize(model.dim_x);
   param.x_target << 1.5, 5.0, 0.0, 0.0, 0.0, 0.0;
-  param.N = 6000;
+  param.N = 10000;
   param.gamma_u = 10.0;
   Eigen::VectorXd sigma_u(model.dim_u);
   sigma_u << 1.5, 1.5, 1.5;
@@ -28,7 +28,8 @@ int main() {
   int maxiter = 200;
 
   std::ofstream csv("result_quadrotor_log_mppi.csv");
-  csv << "map,is_failed,is_landed,iter,elapsed,elapsed_rollout,elapsed_clustering,"
+  csv << "map,is_failed,is_landed,iter,elapsed,elapsed_rollout,elapsed_"
+         "clustering,"
          "elapsed_connection,elapsed_guide,f_err\n";
 
   for (int map = 299; map >= 0; --map) {
@@ -67,7 +68,9 @@ int main() {
         f_err = (solver.x_init.head(2) - param.x_target.head(2)).norm();
         if (solver.x_init(2) < 0) {
           is_landed = true;
-          is_failed = false;
+          if (f_err < 0.3) {
+            is_failed = false;
+          }
           break;
         }
       }

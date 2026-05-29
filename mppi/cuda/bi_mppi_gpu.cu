@@ -25,7 +25,8 @@ __global__ void backward_rollout_kernel(
     int max_row, int max_col, double res,
     const double* d_circles, int n_circ,
     const double* d_rects,   int n_rect,
-    int N, int dim_u, int dim_x, int T, double dt, double gamma_u)
+    int N, int dim_u, int dim_x, int T, double dt, double gamma_u,
+    int model_type)
 {
     int i = blockIdx.x * blockDim.x + threadIdx.x;
     if (i >= N) return;
@@ -37,7 +38,15 @@ __global__ void backward_rollout_kernel(
             double raw = d_Ub0[d*T+t] + d_sigma[d]*d_noise[i*(dim_u*T)+d*T+t];
             Ui_i[d*T+t] = raw;
         }
-    h_wmrobot(Ui_i, T);
+    if (model_type == 0) {
+        h_wmrobot(Ui_i, T);
+    } else if (model_type == 1) {
+        h_quadrotor(Ui_i, T);
+    } else if (model_type == 2) {
+        h_velo(Ui_i, T);
+    } else if (model_type == 3) {
+        h_manipulator(Ui_i, dim_u, T);
+    }
 
     double* Di_i = d_Di + i * dim_u;
     for (int d = 0; d < dim_u; ++d) {
@@ -53,12 +62,42 @@ __global__ void backward_rollout_kernel(
     bool hit = false;
 
     for (int j = T-1; j >= 0; --j) {
-        double v, omega;
-        if (j == T-1) { v = Ui_i[0*T+j]; omega = Ui_i[1*T+j]; }
-        else           { v = Ui_i[0*T+j+1]; omega = Ui_i[1*T+j+1]; }
+        if (model_type == 0) {
+            double v, omega;
+            if (j == T-1) { v = Ui_i[0*T+j]; omega = Ui_i[1*T+j]; }
+            else           { v = Ui_i[0*T+j+1]; omega = Ui_i[1*T+j+1]; }
 
-        cost += p_wmrobot(x, d_x_init, dim_x);
-        f_wmrobot(x, v, omega, xd_);
+            cost += p_wmrobot(x, d_x_init, dim_x);
+            f_wmrobot(x, v, omega, xd_);
+        } else if (model_type == 1) {
+            double u_val[3];
+            if (j == T-1) {
+                u_val[0] = Ui_i[0*T+j]; u_val[1] = Ui_i[1*T+j]; u_val[2] = Ui_i[2*T+j];
+            } else {
+                u_val[0] = Ui_i[0*T+j+1]; u_val[1] = Ui_i[1*T+j+1]; u_val[2] = Ui_i[2*T+j+1];
+            }
+
+            cost += p_quadrotor(x, d_x_init, dim_x);
+            f_quadrotor(x, u_val, xd_);
+        } else if (model_type == 2) {
+            double u_val[2];
+            if (j == T-1) {
+                u_val[0] = Ui_i[0*T+j]; u_val[1] = Ui_i[1*T+j];
+            } else {
+                u_val[0] = Ui_i[0*T+j+1]; u_val[1] = Ui_i[1*T+j+1];
+            }
+
+            cost += p_velo(x, d_x_init, dim_x);
+            f_velo(x, u_val, xd_);
+        } else if (model_type == 3) {
+            double u_manip[GPU_MAX_DIM_U];
+            for (int _d = 0; _d < dim_u; ++_d) {
+                if (j == T-1) u_manip[_d] = Ui_i[_d*T+j];
+                else          u_manip[_d] = Ui_i[_d*T+j+1];
+            }
+            cost += p_manipulator(x, d_x_init, dim_x);
+            f_manipulator(x, u_manip, xd_, dim_u);
+        }
         for (int d = 0; d < dim_x; ++d) xn[d] = x[d] - dt * xd_[d];
 
         if (!hit && check_collision(x, with_map, d_map, max_row, max_col, res,
@@ -68,7 +107,15 @@ __global__ void backward_rollout_kernel(
         for (int d = 0; d < dim_x; ++d) x[d] = xn[d];
     }
     if (!hit) {
-        cost += p_wmrobot(x, d_x_init, dim_x);
+        if (model_type == 0) {
+            cost += p_wmrobot(x, d_x_init, dim_x);
+        } else if (model_type == 1) {
+            cost += p_quadrotor(x, d_x_init, dim_x);
+        } else if (model_type == 2) {
+            cost += p_velo(x, d_x_init, dim_x);
+        } else if (model_type == 3) {
+            cost += p_manipulator(x, d_x_init, dim_x);
+        }
         if (check_collision(x, with_map, d_map, max_row, max_col, res,
                             d_circles, n_circ, d_rects, n_rect))
             cost = 1e8;
@@ -90,7 +137,8 @@ __global__ void guide_rollout_kernel(
     int max_row, int max_col, double res,
     const double* d_circles, int n_circ,
     const double* d_rects,   int n_rect,
-    int N, int dim_u, int dim_x, int Tr, double dt, double gamma_u)
+    int N, int dim_u, int dim_x, int Tr, double dt, double gamma_u,
+    int model_type)
 {
     int i = blockIdx.x * blockDim.x + threadIdx.x;
     if (i >= N) return;
@@ -101,7 +149,15 @@ __global__ void guide_rollout_kernel(
             Ui_i[d*Tr+t] = d_Ur0[d*Tr+t] +
                             d_sigma[d]*d_noise[i*(dim_u*Tr)+d*Tr+t];
         }
-    h_wmrobot(Ui_i, Tr);
+    if (model_type == 0) {
+        h_wmrobot(Ui_i, Tr);
+    } else if (model_type == 1) {
+        h_quadrotor(Ui_i, Tr);
+    } else if (model_type == 2) {
+        h_velo(Ui_i, Tr);
+    } else if (model_type == 3) {
+        h_manipulator(Ui_i, dim_u, Tr);
+    }
 
     double x[GPU_MAX_DIM_X], xn[GPU_MAX_DIM_X], xd_[GPU_MAX_DIM_X];
     for (int d = 0; d < dim_x; ++d) x[d] = d_x_init[d];
@@ -110,17 +166,54 @@ __global__ void guide_rollout_kernel(
     bool hit = false;
 
     for (int t = 0; t < Tr; ++t) {
-        double v = Ui_i[0*Tr+t], omega = Ui_i[1*Tr+t];
-        cost += p_wmrobot(x, d_x_target, dim_x);
-        // guide cost: distance to reference trajectory
-        double gc = 0.0;
-        for (int d = 0; d < dim_x; ++d) {
-            double diff = x[d] - d_Xref[d*(Tr+1)+t];
-            gc += diff*diff;
-        }
-        cost += sqrt(gc);
+        if (model_type == 0) {
+            double v = Ui_i[0*Tr+t], omega = Ui_i[1*Tr+t];
+            cost += p_wmrobot(x, d_x_target, dim_x);
+            // guide cost: distance to reference trajectory
+            double gc = 0.0;
+            for (int d = 0; d < dim_x; ++d) {
+                double diff = x[d] - d_Xref[d*(Tr+1)+t];
+                gc += diff*diff;
+            }
+            cost += sqrt(gc);
 
-        f_wmrobot(x, v, omega, xd_);
+            f_wmrobot(x, v, omega, xd_);
+        } else if (model_type == 1) {
+            double u_val[3] = { Ui_i[0*Tr+t], Ui_i[1*Tr+t], Ui_i[2*Tr+t] };
+            cost += p_quadrotor(x, d_x_target, dim_x);
+            // guide cost: distance to reference trajectory
+            double gc = 0.0;
+            for (int d = 0; d < dim_x; ++d) {
+                double diff = x[d] - d_Xref[d*(Tr+1)+t];
+                gc += diff*diff;
+            }
+            cost += sqrt(gc);
+
+            f_quadrotor(x, u_val, xd_);
+        } else if (model_type == 2) {
+            double u_val[2] = { Ui_i[0*Tr+t], Ui_i[1*Tr+t] };
+            cost += p_velo(x, d_x_target, dim_x);
+            // guide cost: distance to reference trajectory
+            double gc = 0.0;
+            for (int d = 0; d < dim_x; ++d) {
+                double diff = x[d] - d_Xref[d*(Tr+1)+t];
+                gc += diff*diff;
+            }
+            cost += sqrt(gc);
+
+            f_velo(x, u_val, xd_);
+        } else if (model_type == 3) {
+            double u_manip[GPU_MAX_DIM_U];
+            for (int _d = 0; _d < dim_u; ++_d) u_manip[_d] = Ui_i[_d*Tr+t];
+            cost += p_manipulator(x, d_x_target, dim_x);
+            double gc = 0.0;
+            for (int d = 0; d < dim_x; ++d) {
+                double diff = x[d] - d_Xref[d*(Tr+1)+t];
+                gc += diff*diff;
+            }
+            cost += sqrt(gc);
+            f_manipulator(x, u_manip, xd_, dim_u);
+        }
         for (int d = 0; d < dim_x; ++d) xn[d] = x[d] + dt*xd_[d];
 
         if (!hit && check_collision(x, with_map, d_map, max_row, max_col, res,
@@ -130,8 +223,19 @@ __global__ void guide_rollout_kernel(
         for (int d = 0; d < dim_x; ++d) x[d] = xn[d];
     }
     if (!hit) {
-        cost += p_wmrobot(x, d_x_target, dim_x);
-        cost += p_wmrobot(x, d_x_target, dim_x);
+        if (model_type == 0) {
+            cost += p_wmrobot(x, d_x_target, dim_x);
+            cost += p_wmrobot(x, d_x_target, dim_x);
+        } else if (model_type == 1) {
+            cost += p_quadrotor(x, d_x_target, dim_x);
+            cost += p_quadrotor(x, d_x_target, dim_x);
+        } else if (model_type == 2) {
+            cost += p_velo(x, d_x_target, dim_x);
+            cost += p_velo(x, d_x_target, dim_x);
+        } else if (model_type == 3) {
+            cost += p_manipulator(x, d_x_target, dim_x);
+            cost += p_manipulator(x, d_x_target, dim_x);
+        }
         if (check_collision(x, with_map, d_map, max_row, max_col, res,
                             d_circles, n_circ, d_rects, n_rect))
             cost = 1e8;
@@ -331,8 +435,8 @@ void BiMPPI_GPU::calculateU(Eigen::MatrixXd& Uout,
         for(int i=0;i<pts;++i){ wts[i]=std::exp(-gamma_u*(costs(clusters[idx][i])-mc)); tw+=wts[i]; }
         for(int i=0;i<pts;++i)
             Uout.middleRows(idx*dim_u,dim_u)+=(wts[i]/tw)*Ui_cpu.middleRows(clusters[idx][i]*dim_u,dim_u);
-        Uout.block(idx*dim_u,  0,1,T_steps)=Uout.block(idx*dim_u,  0,1,T_steps).cwiseMax(0.0).cwiseMin(1.0);
-        Uout.block(idx*dim_u+1,0,1,T_steps)=Uout.block(idx*dim_u+1,0,1,T_steps).cwiseMax(-M_PI/2).cwiseMin(M_PI/2);
+        Eigen::Ref<Eigen::MatrixXd> slice = Uout.middleRows(idx*dim_u, dim_u);
+        h(slice);
     }
 }
 
@@ -348,7 +452,7 @@ void BiMPPI_GPU::forwardRollout() {
     int B=256,G=(Nf+B-1)/B;
     bi_rollout_kernel<<<G,B>>>(d_Uf0,d_Ufi,d_noise_f,d_sigma,d_x_init,d_x_target,
         d_costs_f,d_Di_f,with_map,d_map,map_max_row,map_max_col,map_resolution,
-        d_circles,n_circles,d_rects,n_rects,Nf,dim_u,dim_x,Tf,(double)dt,gamma_u);
+        d_circles,n_circles,d_rects,n_rects,Nf,dim_u,dim_x,Tf,(double)dt,gamma_u,model_type);
     CUDA_CHECK(cudaGetLastError()); CUDA_CHECK(cudaDeviceSynchronize());
     auto t1=std::chrono::high_resolution_clock::now();
     elapsed_rollout+=std::chrono::duration<double>(t1-t0).count();
@@ -369,9 +473,8 @@ void BiMPPI_GPU::forwardRollout() {
     for(int ci=0;ci<(int)clusters_f.size();++ci){
         Xf.block(ci*dim_x,0,dim_x,1)=x_init;
         for(int t=0;t<Tf;++t){
-            Eigen::VectorXd xd(dim_x); double v=Uf(ci*dim_u,t),om=Uf(ci*dim_u+1,t);
-            xd(0)=v*cos(Xf(ci*dim_x+2,t)); xd(1)=v*sin(Xf(ci*dim_x+2,t)); xd(2)=om;
-            Xf.block(ci*dim_x,t+1,dim_x,1)=Xf.block(ci*dim_x,t,dim_x,1)+(double)dt*xd;
+            Xf.block(ci*dim_x,t+1,dim_x,1)=Xf.block(ci*dim_x,t,dim_x,1)+
+                (double)dt*f(Xf.block(ci*dim_x,t,dim_x,1), Uf.block(ci*dim_u,t,dim_u,1));
         }
     }
     elapsed_clustering+=std::chrono::duration<double>(std::chrono::high_resolution_clock::now()-t1).count();
@@ -387,7 +490,7 @@ void BiMPPI_GPU::backwardRollout() {
     int B=256,G=(Nb+B-1)/B;
     backward_rollout_kernel<<<G,B>>>(d_Ub0,d_Ubi,d_noise_b,d_sigma,d_x_init,d_x_target,
         d_costs_b,d_Di_b,with_map,d_map,map_max_row,map_max_col,map_resolution,
-        d_circles,n_circles,d_rects,n_rects,Nb,dim_u,dim_x,Tb,(double)dt,gamma_u);
+        d_circles,n_circles,d_rects,n_rects,Nb,dim_u,dim_x,Tb,(double)dt,gamma_u,model_type);
     CUDA_CHECK(cudaGetLastError()); CUDA_CHECK(cudaDeviceSynchronize());
     auto t1=std::chrono::high_resolution_clock::now();
     elapsed_rollout+=std::chrono::duration<double>(t1-t0).count();
@@ -408,11 +511,10 @@ void BiMPPI_GPU::backwardRollout() {
     for(int ci=0;ci<(int)clusters_b.size();++ci){
         Xb.block(ci*dim_x,Tb,dim_x,1)=x_target;
         for(int t=Tb-1;t>=0;--t){
-            Eigen::VectorXd xd(dim_x); double v,om;
-            if(t==Tb-1){ v=Ub(ci*dim_u,t); om=Ub(ci*dim_u+1,t); }
-            else        { v=Ub(ci*dim_u,t+1); om=Ub(ci*dim_u+1,t+1); }
-            xd(0)=v*cos(Xb(ci*dim_x+2,t+1)); xd(1)=v*sin(Xb(ci*dim_x+2,t+1)); xd(2)=om;
-            Xb.block(ci*dim_x,t,dim_x,1)=Xb.block(ci*dim_x,t+1,dim_x,1)-(double)dt*xd;
+            Eigen::VectorXd u_val(dim_u);
+            if(t==Tb-1){ u_val=Ub.block(ci*dim_u,t,dim_u,1); }
+            else        { u_val=Ub.block(ci*dim_u,t+1,dim_u,1); }
+            Xb.block(ci*dim_x,t,dim_x,1)=Xb.block(ci*dim_x,t+1,dim_x,1)-(double)dt*f(Xb.block(ci*dim_x,t+1,dim_x,1), u_val);
         }
     }
     elapsed_clustering+=std::chrono::duration<double>(std::chrono::high_resolution_clock::now()-t1).count();
@@ -465,7 +567,7 @@ void BiMPPI_GPU::guideMPPI() {
         int B=256,G=(Nr+B-1)/B;
         guide_rollout_kernel<<<G,B>>>(d_Ur0,d_Uri,d_noise_r,d_sigma,d_x_init,d_x_target,d_Xref,d_costs_r,
             with_map,d_map,map_max_row,map_max_col,map_resolution,d_circles,n_circles,d_rects,n_rects,
-            Nr,dim_u,dim_x,Tr,(double)dt,gamma_u);
+            Nr,dim_u,dim_x,Tr,(double)dt,gamma_u,model_type);
         CUDA_CHECK(cudaGetLastError()); CUDA_CHECK(cudaDeviceSynchronize());
         std::vector<double> hcr(Nr),hri((size_t)Nr*dim_u*Tr);
         CUDA_CHECK(cudaMemcpy(hcr.data(),d_costs_r,Nr*sizeof(double),cudaMemcpyDeviceToHost));
@@ -476,15 +578,13 @@ void BiMPPI_GPU::guideMPPI() {
         Eigen::MatrixXd Ures=Eigen::MatrixXd::Zero(dim_u,Tr);
         for(int i=0;i<Nr;++i) for(int d=0;d<dim_u;++d) for(int t=0;t<Tr;++t)
             Ures(d,t)+=wts(i)*hri[i*(dim_u*Tr)+d*Tr+t];
-        Ures.row(0)=Ures.row(0).cwiseMax(0.0).cwiseMin(1.0);
-        Ures.row(1)=Ures.row(1).cwiseMax(-M_PI/2).cwiseMin(M_PI/2);
+        h(Ures);
         Eigen::MatrixXd Xi(dim_x,Tr+1); Xi.col(0)=x_init; double cost=0.0;
         for(int t=0;t<Tr;++t){
-            Eigen::VectorXd xd(dim_x); double v=Ures(0,t),om=Ures(1,t);
-            xd(0)=v*cos(Xi(2,t)); xd(1)=v*sin(Xi(2,t)); xd(2)=om;
-            Xi.col(t+1)=Xi.col(t)+(double)dt*xd; cost+=(Xi.col(t)-x_target).norm();
+            Xi.col(t+1)=Xi.col(t)+(double)dt*f(Xi.col(t), Ures.col(t));
+            cost+=p(Xi.col(t), x_target);
         }
-        cost+=(Xi.col(Tr)-x_target).norm();
+        cost+=p(Xi.col(Tr), x_target);
         if(collision_checker->getCollisionGrid(Xi.col(Tr))) cost=1e8;
         Ur.push_back(Ures); Cr.push_back(cost); Xr.push_back(Xi);
     }
@@ -537,8 +637,6 @@ void BiMPPI_GPU::solve() {
 }
 
 void BiMPPI_GPU::move() {
-    Eigen::VectorXd xd(dim_x); double v=u0(0),om=u0(1);
-    xd(0)=v*cos(x_init(2)); xd(1)=v*sin(x_init(2)); xd(2)=om;
-    x_init=x_init+(double)dt*xd;
+    x_init=x_init+(double)dt*f(x_init, u0);
     U_f0.leftCols(U_f0.cols()-1)=U_f0.rightCols(U_f0.cols()-1);
 }

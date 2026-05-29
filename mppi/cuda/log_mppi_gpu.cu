@@ -32,7 +32,8 @@ __global__ void log_mppi_rollout_kernel(
     int max_row, int max_col, double res,
     const double* d_circles, int n_circ,
     const double* d_rects,   int n_rect,
-    int N, int dim_u, int dim_x, int T, double dt, double gamma_u)
+    int N, int dim_u, int dim_x, int T, double dt, double gamma_u,
+    int model_type)
 {
   int i = blockIdx.x * blockDim.x + threadIdx.x;
   if (i >= N) return;
@@ -48,8 +49,16 @@ __global__ void log_mppi_rollout_kernel(
       Ui_i[d * T + t] = d_U0[d * T + t] + d_sigma[d] * eta * log_factor;
     }
 
-  // Clamp controls (h_wmrobot)
-  h_wmrobot(Ui_i, T);
+  // Clamp controls
+  if (model_type == 0) {
+    h_wmrobot(Ui_i, T);
+  } else if (model_type == 1) {
+    h_quadrotor(Ui_i, T);
+  } else if (model_type == 2) {
+    h_velo(Ui_i, T);
+  } else if (model_type == 3) {
+    h_manipulator(Ui_i, dim_u, T);
+  }
 
   // Mean deviation Di
   double* Di_i = d_Di + i * dim_u;
@@ -66,9 +75,24 @@ __global__ void log_mppi_rollout_kernel(
   bool hit = false;
 
   for (int t = 0; t < T; ++t) {
-    double v = Ui_i[0 * T + t], omega = Ui_i[1 * T + t];
-    cost += p_wmrobot(x, d_x_target, dim_x);
-    f_wmrobot(x, v, omega, xd_);
+    if (model_type == 0) {
+      cost += p_wmrobot(x, d_x_target, dim_x);
+      double v = Ui_i[0 * T + t], omega = Ui_i[1 * T + t];
+      f_wmrobot(x, v, omega, xd_);
+    } else if (model_type == 1) {
+      cost += p_quadrotor(x, d_x_target, dim_x);
+      double u_val[3] = { Ui_i[0 * T + t], Ui_i[1 * T + t], Ui_i[2 * T + t] };
+      f_quadrotor(x, u_val, xd_);
+    } else if (model_type == 2) {
+      cost += p_velo(x, d_x_target, dim_x);
+      double u_v[2] = { Ui_i[0 * T + t], Ui_i[1 * T + t] };
+      f_velo(x, u_v, xd_);
+    } else if (model_type == 3) {
+      cost += p_manipulator(x, d_x_target, dim_x);
+      double u_manip[GPU_MAX_DIM_U];
+      for (int _d = 0; _d < dim_u; ++_d) u_manip[_d] = Ui_i[_d * T + t];
+      f_manipulator(x, u_manip, xd_, dim_u);
+    }
     for (int d = 0; d < dim_x; ++d) xn[d] = x[d] + dt * xd_[d];
     if (!hit && check_collision(x, with_map, d_map, max_row, max_col, res,
                                 d_circles, n_circ, d_rects, n_rect)) {
@@ -77,7 +101,15 @@ __global__ void log_mppi_rollout_kernel(
     for (int d = 0; d < dim_x; ++d) x[d] = xn[d];
   }
   if (!hit) {
-    cost += p_wmrobot(x, d_x_target, dim_x);
+    if (model_type == 0) {
+      cost += p_wmrobot(x, d_x_target, dim_x);
+    } else if (model_type == 1) {
+      cost += p_quadrotor(x, d_x_target, dim_x);
+    } else if (model_type == 2) {
+      cost += p_velo(x, d_x_target, dim_x);
+    } else if (model_type == 3) {
+      cost += p_manipulator(x, d_x_target, dim_x);
+    }
     if (check_collision(x, with_map, d_map, max_row, max_col, res,
                         d_circles, n_circ, d_rects, n_rect))
       cost = 1e8;
@@ -131,7 +163,7 @@ void LogMPPI_GPU::solve() {
       d_costs, d_Di,
       with_map, d_map, map_max_row, map_max_col, map_resolution,
       d_circles, n_circles, d_rects, n_rects,
-      N, dim_u, dim_x, T, (double)dt, gamma_u);
+      N, dim_u, dim_x, T, (double)dt, gamma_u, model_type);
   CUDA_CHECK(cudaGetLastError());
 
   // Copy costs to host for min
@@ -159,8 +191,7 @@ void LogMPPI_GPU::solve() {
       Uo(d, t) = h_Uo[d * T + t];
 
   // h() clamping
-  Uo.row(0) = Uo.row(0).cwiseMax(0.0).cwiseMin(1.0);
-  Uo.row(1) = Uo.row(1).cwiseMax(-M_PI / 2.0).cwiseMin(M_PI / 2.0);
+  h(Uo);
 
   CUDA_CHECK(cudaDeviceSynchronize());
   finish = std::chrono::high_resolution_clock::now();
@@ -176,12 +207,7 @@ void LogMPPI_GPU::solve() {
   // Reconstruct optimal trajectory on CPU
   Xo.col(0) = x_init;
   for (int j = 0; j < T; ++j) {
-    Eigen::VectorXd xd(dim_x);
-    double v = Uo(0, j), omega = Uo(1, j);
-    xd(0) = v * cos(Xo(2, j));
-    xd(1) = v * sin(Xo(2, j));
-    xd(2) = omega;
-    Xo.col(j + 1) = Xo.col(j) + (double)dt * xd;
+    Xo.col(j + 1) = Xo.col(j) + (double)dt * f(Xo.col(j), Uo.col(j));
   }
 
   visual_traj.push_back(x_init);
